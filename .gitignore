@@ -1,0 +1,12 @@
+*.iml
+*.DS_Store
+# Package Files #
+#*.jar
+*.log
+# Target directory #
+*target/**
+.idea
+*.deb
+*.ipr
+*.iws
+
