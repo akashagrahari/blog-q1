@@ -29,7 +29,7 @@ public class BlogPart {
             return new BlogPart(
                     resultSet.getLong(DatabaseConstants.FIELD_ID),
                     resultSet.getString(DatabaseConstants.FIELD_CONTENT),
-                    new ArrayList<Comment>()
+                    new ArrayList<>()
             );
         }
     }
