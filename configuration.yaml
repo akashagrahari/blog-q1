@@ -1,0 +1,44 @@
+server:
+  adminMinThreads: 1
+  adminMaxThreads: 64
+  applicationConnectors:
+    - type: http
+      port: 28200
+  adminConnectors:
+    - type: http
+      port: 28201
+  requestLog:
+      appenders:
+      - type: file
+        currentLogFilename: access.log
+        archivedLogFilenamePattern: access-%d.log
+        archivedFileCount: 10
+
+logging:
+  appenders:
+  - type: file
+    threshold: INFO
+    timeZone: IST
+    logFormat: "%highlight(%-5level) [%date] [%thread] [%cyan(%logger{0})]: %message%n"
+    currentLogFilename: blog.log
+    archive: true
+    archivedLogFilenamePattern: blog-%d{yyyy-MM-dd-HH}.log
+    archivedFileCount: 50
+  - type: console
+    threshold: ALL
+    target: stdout
+
+blogDataSourceFactory:
+  driverClass: com.mysql.jdbc.Driver
+  user: root
+  password: root
+  url: jdbc:mysql://127.0.0.1:3306/blog_q1
+  maxWaitForConnection: 1s
+  validationQuery: "/* MyService Health Check */ SELECT 1"
+  minSize: 8
+  maxSize: 32
+  checkConnectionWhileIdle: false
+  evictionInterval: 10s
+  minIdleTime: 1 minute
+
+pageSize: 5

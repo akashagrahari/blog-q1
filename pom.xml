@@ -5,8 +5,60 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>blog-q1</groupId>
-    <artifactId>com.example.test</artifactId>
+    <artifactId>com.example.question</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>core</module>
+        <module>representations</module>
+        <module>service</module>
+    </modules>
 
+    <properties>
+        <java.version>1.8</java.version>
+        <dropwizard.version>0.9.2</dropwizard.version>
+        <junit.version>4.12</junit.version>
+        <lombok.version>1.16.6</lombok.version>
+        <commons-collections.version>3.2.2</commons-collections.version>
+        <guice.version>4.1.0</guice.version>
+        <mockito-all.version>1.10.19</mockito-all.version>
+        <apache-commons.version>3.4</apache-commons.version>
+        <jackson.version>2.7.4</jackson.version>
+        <jdbi.version>2.77</jdbi.version>
+        <mysql-connector.version>5.1.26</mysql-connector.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.inject</groupId>
+            <artifactId>guice</artifactId>
+            <version>${guice.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.dropwizard</groupId>
+            <artifactId>dropwizard-db</artifactId>
+            <version>${dropwizard.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.dropwizard</groupId>
+            <artifactId>dropwizard-jdbi</artifactId>
+            <version>${dropwizard.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+            <version>${mockito-all.version}</version>
+        </dependency>
+    </dependencies>
 
 </project>
