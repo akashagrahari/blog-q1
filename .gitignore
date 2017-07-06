@@ -1,12 +1,10 @@
 *.iml
 *.DS_Store
-# Package Files #
 #*.jar
 *.log
-# Target directory #
-*target/**
+*/target/*
+**/build/**
 .idea
-*.deb
-*.ipr
-*.iws
-
+/core/target/
+/representations/target
+/service/target
